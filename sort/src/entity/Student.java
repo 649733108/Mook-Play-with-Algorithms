@@ -1,4 +1,4 @@
-
+package entity;
 /*
  * Created by wxn
  * 2018/12/1 5:33
@@ -27,7 +27,7 @@ public class Student implements Comparable<Student> {
 
 	@Override
 	public String toString() {
-		return "Student " + "name: " + name
+		return "question.Student " + "name: " + name
 				+ " score: " + score;
 	}
 }

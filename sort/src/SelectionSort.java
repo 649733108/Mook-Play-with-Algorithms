@@ -4,6 +4,9 @@
  * 2018/12/1 4:54
  */
 
+import entity.Student;
+import util.SortTestHelper;
+
 /**
  * 选择排序
  */
@@ -40,7 +43,7 @@ public class SelectionSort {
 
 		Integer[] arrs = SortTestHelper.generateRangeInt(10000,1,100);
 //		sort(arrs);
-//		SortTestHelper.printArr(arrs);
+//		util.SortTestHelper.printArr(arrs);
 
 		SortTestHelper.testSort(SelectionSort.class,arrs);
 

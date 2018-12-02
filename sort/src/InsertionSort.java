@@ -4,9 +4,7 @@
  * 2018/12/1 7:06
  */
 
-import com.sun.javafx.collections.SortHelper;
-
-import java.util.Arrays;
+import util.SortTestHelper;
 
 /**
  * 插入排序
@@ -29,10 +27,21 @@ public class InsertionSort {
 		}
 	}
 
+	// 对arr[l...r]的区间使用InsertionSort排序
+	public static void sort(Comparable[] arr, int l, int r){
+
+		for( int i = l + 1 ; i <= r ; i ++ ){
+			Comparable e = arr[i];
+			int j = i;
+			for( ; j > l && arr[j-1].compareTo(e) > 0 ; j--)
+				arr[j] = arr[j-1];
+			arr[j] = e;
+		}
+	}
 
 	public static void main(String args[]) {
 
-//		Integer[] arrs1 = SortTestHelper.generateRangeInt(100000, 1, 5);
+//		Integer[] arrs1 = util.SortTestHelper.generateRangeInt(100000, 1, 5);
 		Integer[] arrs1 = SortTestHelper.generateSortedLikeInt(100000,10);
 		Integer[] arrs2 = SortTestHelper.copyInt(arrs1);
 
