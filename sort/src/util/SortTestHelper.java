@@ -41,6 +41,16 @@ public class SortTestHelper {
 		return arrs;
 	}
 
+	//生成有序的int数组
+	public static Integer[] generateSortedInt(int n){
+		Integer[]arrs = new Integer[n];
+		for (int i = 0; i<n ; i++){
+			arrs[i] = i;
+		}
+
+		return arrs;
+	}
+
 	//输出数组的元素
 	public static void printArr(Comparable[] arrs) {
 		for (Comparable arr : arrs) {
