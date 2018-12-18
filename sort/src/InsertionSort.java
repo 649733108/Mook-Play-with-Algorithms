@@ -11,10 +11,10 @@ import util.SortTestHelper;
  */
 public class InsertionSort {
 
-	public static void sort(Comparable[] arrs) {
+	public static void sort(Comparable<Comparable>[] arrs) {
 		int n = arrs.length;
 		for (int i = 1; i < n; i++) {
-			Comparable e = arrs[i];
+			Comparable<Comparable> e = arrs[i];
 			int j;//保存元素i应该插入的位置
 			for (j = i; j > 0; j--) {
 				if (arrs[j-1].compareTo(e) > 0) {
@@ -28,10 +28,10 @@ public class InsertionSort {
 	}
 
 	// 对arr[l...r]的区间使用InsertionSort排序
-	public static void sort(Comparable[] arr, int l, int r){
+	public static void sort(Comparable<Comparable>[] arr, int l, int r){
 
 		for( int i = l + 1 ; i <= r ; i ++ ){
-			Comparable e = arr[i];
+			Comparable<Comparable> e = arr[i];
 			int j = i;
 			for( ; j > l && arr[j-1].compareTo(e) > 0 ; j--)
 				arr[j] = arr[j-1];
@@ -41,14 +41,14 @@ public class InsertionSort {
 
 	public static void main(String args[]) {
 
-//		Integer[] arrs1 = util.SortTestHelper.generateRangeInt(100000, 1, 5);
-		Integer[] arrs1 = SortTestHelper.generateSortedLikeInt(100000,10);
-		Integer[] arrs2 = SortTestHelper.copyInt(arrs1);
+		Integer[] arrs1 = {4,3,2,1};
+//		Integer[] arrs1 = SortTestHelper.generateSortedLikeInt(100000,10);
+//		Integer[] arrs2 = SortTestHelper.copyInt(arrs1);
 
 		SortTestHelper.printArr(arrs1);
 
-		SortTestHelper.testSort(SelectionSort.class,arrs1);
-		SortTestHelper.testSort(InsertionSort.class,arrs2);
+//		SortTestHelper.testSort(SelectionSort.class,arrs1);
+		SortTestHelper.testSort(InsertionSort.class,arrs1);
 
 	}
 
